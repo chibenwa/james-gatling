@@ -26,7 +26,7 @@ trait SimulationOnMailCorpus {
 
   protected def injectUsersInScenario(scenario: ScenarioBuilder, nbUsers: Int = 5000) = {
     scenario
-      .inject(constantUserPerHour(nbUsers) during 1.hour)
+      .inject(constantUserPerHour(nbUsers) during 30.minutes)
       .protocols(HttpSettings.httpProtocol)
   }
 
