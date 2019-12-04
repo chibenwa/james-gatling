@@ -1,9 +1,5 @@
 package org.apache.james.gatling.simulation
 
-import io.gatling.core.Predef._
-import io.gatling.core.assertion.AssertionWithPathAndTarget
-import io.gatling.core.feeder.SourceFeederBuilder
-import io.gatling.core.structure.ScenarioBuilder
 import org.apache.james.gatling.control.{Password, User, UserFeeder, Username}
 import org.apache.james.gatling.jmap.MailboxName
 import org.apache.james.gatling.jmap.scenari.RealUsageScenario
@@ -28,7 +24,7 @@ trait SimulationOnMailCorpus {
 
   protected val feeder: SourceFeederBuilder[String] = UserFeeder.toFeeder(getUsers).circular
 
-  protected def injectUsersInScenario(scenario: ScenarioBuilder, nbUsers: Int = 50000) = {
+  protected def injectUsersInScenario(scenario: ScenarioBuilder, nbUsers: Int = 5000) = {
     scenario
       .inject(constantUserPerHour(nbUsers) during 1.hour)
       .protocols(HttpSettings.httpProtocol)

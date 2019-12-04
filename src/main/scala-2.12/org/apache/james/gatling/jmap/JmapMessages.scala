@@ -1,10 +1,5 @@
 package org.apache.james.gatling.jmap
 
-import io.gatling.core.Predef._
-import io.gatling.core.json.Json
-import io.gatling.core.session.Session
-import io.gatling.http.Predef._
-import io.gatling.http.check.HttpCheck
 import org.apache.james.gatling.control.RecipientFeeder.RecipientFeederBuilder
 import org.apache.james.gatling.control.{RecipientFeeder, User, UserFeeder}
 import org.apache.james.gatling.jmap.RetryAuthentication._
@@ -160,7 +155,7 @@ object JmapMessages {
 
   val typicalMessageProperties: List[String] = List("bcc", "cc", "date", "from", "hasAttachment", "htmlBody", "id", "isAnswered", "isDraft", "isFlagged", "isUnread", "mailboxIds", "size", "subject", "textBody", "to")
 
-  val previewMessageProperties: List[String] = List("bcc", "blobId", "cc", "date", "from", "hasAttachment", "headers", "id", "isAnswered", "isDraft", "isFlagged", "isForwarded", "isUnread", "mailboxIds", "preview", "replyTo", "subject", "threadId", "to")
+  val previewMessageProperties: List[String] = List("id", "isAnswered", "isDraft", "isFlagged", "isForwarded", "isUnread", "mailboxIds")
 
   val openpaasInboxOpenMessageProperties: List[String] = List("attachments", "bcc", "blobId", "cc", "date", "from", "hasAttachment", "headers", "htmlBody", "id", "isDraft", "isFlagged", "isUnread", "mailboxIds", "preview", "replyTo", "subject", "textBody", "threadId", "to")
 
